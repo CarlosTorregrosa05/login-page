@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://media.istockphoto.com/id/1385658360/photo/beautiful-hills-and-mountains-colored-of-shades-of-blue-extending-up-to-the-horizon-at.jpg?b=1&s=612x612&w=0&k=20&c=v9JdcEAyrGTfZofod27vTbdbPnv3UefVow6tjS74hMM=');
+    background-size: cover;
+}
+
+form {
+    max-width: 650px;
+    min-height: 700px;
+    max-height: fit-content;
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    text-align: center;
+    padding: 15px 30px;
+    margin: 10px;
+}
+
+form>h1 {
+    font-size: 3.2rem;
+    margin-top: 30px;
+    font-weight: 600;
+    border-bottom: 3px solid white;
+    color: rgb(242, 248, 253);
+}
+
+.login__title {
+    text-shadow: 0 4px 30px rgba(0, 0, 0, .3);
+}
+
+.login__container {
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+    text-align: start;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__username {
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.login__password {
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+label {
+    position: absolute;
+    z-index: -1;
+    margin-left: 5px;
+    top: 25px;
+    left: 15px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+input {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 3px solid white;
+    margin: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    padding: .2em .3em;
+    outline: none;
+}
+
+/* si no se le pone lo de :placeholder-shown se superponen tanto el label como lo que se ha escrito en el input */
+input:not(:placeholder-shown)+label, input:focus+label {
+    transform: translateY(-2.3rem) translateX(-18px) scale(.8);
+    color: rgba(0, 0, 0, 0.8);
+    transition: transform .5s, color .5s;
+    font-style: normal;
+}
+
+.login__button {
+    padding: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.login__button>a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: rgba(0, 0, 255, 0.8);
+    font-weight: 400;
+}
+
+.login__button .btn {
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px 0;
+    font-size: inherit;
+    font-weight: 600;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 1s;
+}
+
+.btn::before {
+    content: '';
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: -22%;
+    /* border-radius: 16px; */
+    background: rgba(233, 233, 248, 0.5);
+    z-index: -2;
+}
+
+.btn:hover::before {
+    animation: hover_button 2s ease-in-out;
+}
+
+.btn:active {
+    background: rgba(100, 100, 255, 0.9);
+    transition: background 0.5s, color 0.1s;
+    color: white;
+    box-shadow: inset 0px 2px 30px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes hover_button {
+    from {
+        transform: translateX(0) skew(20deg);
+    }
+
+    to {
+        transform: translateX(600px) skew(20deg);
+    }
+}
+
+h3, p {
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: rgb(97, 90, 90);
+    text-align: center;
+}
+
+.login__acc>p {
+    color: white;
+    text-align: start;
+    font-size: 1.3rem;
+}
+
+.login__acc>p>a {
+    color: rgb(242, 242, 252);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.another__login {
+    width: 100%;
+    height: 80%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.another__login .fb, .ig {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px;
+    width: 150px;
+    max-width: 200px;
+    height: 100%;
+    border-radius: 16px;
+    font-size: inherit;
+    border: none;
+}
+
+.fb {
+    color: white;
+    background-color: rgba(0, 0, 255, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    cursor: pointer;
+}
+
+.fb:active {
+    background-color: rgba(255, 255, 255, 0);
+    color: blue;
+    transform: scale();
+    transition: background-color 0.1s, color 0.1s;
+}
+
+.another__login span {
+    font-size: 1.2rem;
+}
+
+.ig {
+    background: linear-gradient(184deg, rgba(131, 58, 180, 0.8), rgba(253, 29, 29, 0.8), rgba(252, 176, 69, 0.8));
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ig::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    font-size: inherit;
+    border: none;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.ig:active::before {
+    padding: 10px 10px;
+    width: 150px;
+    height: 44px;
+    border-radius: 16px;
+    opacity: 0;
+}
+
+.ig:active {
+    /* las tres lineas siguientes hace que el texto tome como color el gradiente determinado por background-clip  */
+
+    background-clip: linear-gradient(184deg, rgba(131, 58, 180, 0.8), rgba(253, 29, 29, 0.8), rgba(252, 176, 69, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* From https://css.glass */
+/* background: rgba(255, 255, 255, 0.34);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.4px);
+-webkit-backdrop-filter: blur(7.4px); */
+
+
+
+
+/* crea efecto que sale desde la izquierda y llega a la derecha del texto h1 */
+/* h1::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+} */
+
+
+
+
+@media (max-width: 1440px) {
+    h3 {
+        color: white;
+        font-weight: 350;
+    }
+}
