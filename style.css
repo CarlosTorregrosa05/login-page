@@ -275,7 +275,9 @@ h1:hover::before {
     transform-origin: bottom left;
 } */
 
-
+.signup > a:active{
+    animation: 1s form_opacity;
+}
 
 
 @media (max-width: 1440px) {
